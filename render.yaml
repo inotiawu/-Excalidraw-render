@@ -1,5 +1,5 @@
 services:
-  - type: web-service
+  - type: web
     name: excalidraw
     image: kiliandeca/excalidraw
     ports:
@@ -13,7 +13,7 @@ services:
       - STORAGE_BACKEND=http
       - HTTP_STORAGE_BACKEND_URL=http://localhost:8080/api/v2
 
-  - type: web-service
+  - type: web
     name: excalidraw-storage-backend
     image: kiliandeca/excalidraw-storage-backend
     ports:
@@ -21,13 +21,13 @@ services:
     environment:
       - STORAGE_URI=redis://redis:6379
 
-  - type: web-service
+  - type: web
     name: excalidraw-room
     image: excalidraw/excalidraw-room
     ports:
       - 5000:80
 
-  - type: web-service
+  - type: web
     name: redis
     image: redis
     ports:
